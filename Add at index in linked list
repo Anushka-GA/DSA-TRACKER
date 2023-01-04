@@ -1,0 +1,12 @@
+public static Node insert(Node head, int x , int index){
+if(head==null && index>0){
+return head;
+}
+Node nn= new Node(x);
+if(index==0){
+nn.next=head;
+return nn;}
+Node smallhead= insert(head, x,index-1);
+head.next=smallhead;
+return head;
+}
