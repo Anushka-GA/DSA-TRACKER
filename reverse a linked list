@@ -1,0 +1,16 @@
+public static node reverse(node head){
+if(head==null || head.next==null){
+return head;
+}
+node fwd=null;
+node prev=null;
+node curr=head;
+while(curr!=null){
+fwd=curr.next;
+curr.next=prev;
+prev=curr;
+curr=fwd;
+}
+return prev;
+
+}
