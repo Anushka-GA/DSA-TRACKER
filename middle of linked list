@@ -1,0 +1,10 @@
+public static node mid(node head){
+if(head==null || head.next==null){
+return head;}
+node slow=head;
+node fast=head;
+while(fast!=null && fast.next!=null){
+fast=fast.next.next;
+slow=slow.next;}
+return slow;
+}
