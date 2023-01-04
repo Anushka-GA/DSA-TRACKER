@@ -1,0 +1,9 @@
+public static node removelast(node head){
+	if(head==null) {
+		return head;
+	}node temp=head;
+	while(temp.next.next!=null) {
+		temp=temp.next;
+	}temp.next=null;
+	return head;
+}
