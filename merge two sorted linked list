@@ -1,0 +1,42 @@
+public static node merge(node head, node head1){
+if(head==null){
+return head1;}
+if(head1==null){
+return head;}
+node t1=null; node t2=null;
+node mh=null;
+if(head1.data<head.data){
+mh=head1;
+t1=mh;
+head1=head1.next;}
+else{
+mh=head;
+t1=mh;
+head=head.next;
+}
+while(head!=null && head1!=null){
+if(head.data<head1.data){
+t1.next=head;
+t1=t1.next;
+head=head.next;
+}
+else{
+t1.next=head1;
+t1=t1.next;
+head1=head1.next;
+}
+}
+while(head!=null){
+t1.next=head;
+t1=t1.next;
+head=head.next;}
+while(head1!=null){
+t1.next=head1;
+t1=t1.next;
+head1=head1.next;}
+
+return mh;
+
+
+
+}
