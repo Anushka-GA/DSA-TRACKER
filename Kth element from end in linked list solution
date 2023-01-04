@@ -1,0 +1,28 @@
+public static int length(node head)
+{
+int count=0;
+while(head!=null){
+head=head.next;
+count++;}
+return count;}
+public static node kelement(node head,int k){
+if(head==null){
+return head;}
+if(k>n){
+return;
+}
+int n=length(head);
+int index=n-k;
+if(index==0){
+node temp=head;
+temp.next =null;
+return temp;
+}
+while(index>0 && head!=null){
+index--;
+head=head.next;
+}
+node temp=head;
+temp.next =null;
+return temp;
+}
