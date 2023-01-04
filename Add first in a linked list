@@ -1,0 +1,11 @@
+Node insertAtBeginning(Node head, int x)
+    {
+    if(head==null){
+        Node nn= new Node(x);
+        return nn;
+    }
+    Node nn= new Node(x);
+    nn.next =head;
+    return nn;
+    }
+    
