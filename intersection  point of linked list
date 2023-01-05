@@ -1,0 +1,30 @@
+ public static int length(ListNode head){
+        if(head==null){
+            return 0;
+        }
+        int count=0;
+        while(head!=null){
+            head=head.next;
+            count++;
+        }
+        return count;
+    }
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        int lenA = length(headA), lenB = length(headB);
+    // move headA and headB to the same start point
+    while (lenA > lenB) {
+        headA = headA.next;
+        lenA--;
+    }
+    while (lenA < lenB) {
+        headB = headB.next;
+        lenB--;
+    }
+    // find the intersection until end
+    while (headA != headB) {
+        headA = headA.next;
+        headB = headB.next;
+    }
+    return headA;
+    }
+}
