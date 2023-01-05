@@ -1,2 +1,30 @@
 public static node reverse(node head){
+if(head==null || head.next==null){
+return head;
+}
+node fwd=null;
+node prev=null;
+node curr=head;
+while(curr!=null){
+fwd=curr.next;
+curr.next=prev;
+prev=curr;
+curr=fwd;
+}
+return prev;
+
+}
+
+public static boolean palindrome(node head){
+if(head==null){
+return head;}
+node rev=reverse(head);
+while(head!=null && rev!=null){
+if(head.data!=rev.data){
+return false;}
+head=head.next;
+rev=rev.next;}
+if(head!=null || rev!=null){
+return false;}
+return true;
 }
